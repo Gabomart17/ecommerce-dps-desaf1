@@ -1,8 +1,4 @@
 import { Product } from "@/types/product";
-
-// Datos estáticos como pide el documento (Guía de Laboratorio No. 4).
-// Nota: reemplazá las urlImage con imágenes reales que consigas
-// (capturas de Amazon, sitios oficiales de marca, etc.) — estas son de ejemplo.
 export const products: Product[] = [
   // ---------- CPU ----------
     { id: 1, title: "AMD Ryzen 7 7800X3D", category: "CPU", brand: "AMD", price: 449, urlImage: "/images/ryzen77800x3d.jpg", description: "Procesador gaming 8 núcleos con 3D V-Cache", stock: 12, quantity: 1 },

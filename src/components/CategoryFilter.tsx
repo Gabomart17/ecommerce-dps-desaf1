@@ -1,16 +1,13 @@
 import { Category } from "@/types/product";
 
-// "all" es un valor especial nuestro para decir "mostrar todo".
-// Category son las 5 categorías reales que definimos en product.ts.
 type FilterValue = Category | "all";
 
 interface CategoryFilterProps {
-  selected: FilterValue;
-  onSelect: (category: FilterValue) => void;
+    selected: FilterValue;
+    onSelect: (category: FilterValue) => void;
 }
 
-// Lista fija de categorías para pintar los botones.
-// Si mañana agregás una categoría nueva, solo la sumás aquí.
+
 const categories: FilterValue[] = ["all", "CPU", "GPU", "RAM", "Consolas", "Perifericos"];
 
 export default function CategoryFilter({ selected, onSelect }: CategoryFilterProps) {

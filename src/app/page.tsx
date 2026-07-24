@@ -1,7 +1,5 @@
 "use client";
-// "use client" es necesario porque esta página usa useState (interactividad
-// en el navegador). Sin esto, Next.js la trataría como Server Component
-// y no podríamos manejar clicks ni estado.
+
 
 import { useState } from "react";
 import { products } from "@/data/products";
@@ -13,16 +11,10 @@ type FilterValue = Category | "all";
 
 export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState<FilterValue>("all");
-
-  // Filtramos el arreglo de productos según la categoría elegida.
-  // Si es "all", devolvemos todos sin filtrar.
   const filteredProducts =
     selectedCategory === "all"
       ? products
       : products.filter((p) => p.category === selectedCategory);
-
-  // Por ahora solo hace console.log — en la Fase 3 conectamos esto
-  // al Context del carrito de verdad.
   const handleAddToCart = (product: Product) => {
     console.log("Agregado al carrito:", product.title);
   };
