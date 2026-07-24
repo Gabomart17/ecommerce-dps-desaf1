@@ -2,23 +2,21 @@
 
 import { useState } from "react";
 import { products } from "@/data/products";
-import { Product, Category } from "@/types/product";
+import { Category } from "@/types/product";
 import ProductCard from "@/components/ProductCard";
 import CategoryFilter from "@/components/CategoryFilter";
+import { useCart } from "@/context/CartContext";
 
 type FilterValue = Category | "all";
 
 export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState<FilterValue>("all");
+  const { addToCart } = useCart();
 
   const filteredProducts =
     selectedCategory === "all"
       ? products
       : products.filter((p) => p.category === selectedCategory);
-
-  const handleAddToCart = (product: Product) => {
-    console.log("Agregado al carrito:", product.title);
-  };
 
   return (
     <main className="min-h-screen bg-[#0a0e17] max-w-4xl mx-auto px-4 py-6">
@@ -31,7 +29,7 @@ export default function Home() {
 
       <div className="flex flex-col gap-3">
         {filteredProducts.map((product) => (
-          <ProductCard key={product.id} product={product} onAddToCart={handleAddToCart} />
+          <ProductCard key={product.id} product={product} onAddToCart={addToCart} />
         ))}
       </div>
     </main>
