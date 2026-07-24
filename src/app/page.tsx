@@ -1,6 +1,5 @@
 "use client";
 
-
 import { useState } from "react";
 import { products } from "@/data/products";
 import { Product, Category } from "@/types/product";
@@ -11,17 +10,22 @@ type FilterValue = Category | "all";
 
 export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState<FilterValue>("all");
+
   const filteredProducts =
     selectedCategory === "all"
       ? products
       : products.filter((p) => p.category === selectedCategory);
+
   const handleAddToCart = (product: Product) => {
     console.log("Agregado al carrito:", product.title);
   };
 
   return (
-    <main className="max-w-4xl mx-auto px-4 py-6">
-      <h1 className="text-2xl font-bold mb-4">Catálogo Gaming</h1>
+    <main className="min-h-screen bg-[#0a0e17] max-w-4xl mx-auto px-4 py-6">
+      <h1 className="text-3xl font-bold mb-1 text-white">
+        <span className="text-cyan-400">Catálogo</span> Gaming
+      </h1>
+      <p className="text-gray-400 text-sm mb-4">Hardware y periféricos para tu setup</p>
 
       <CategoryFilter selected={selectedCategory} onSelect={setSelectedCategory} />
 
