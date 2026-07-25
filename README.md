@@ -31,6 +31,14 @@ Abrir [http://localhost:3000](http://localhost:3000) en el navegador.
 
 ## Despliegue
 
-Sitio publicado: (https://ecommerce-dps-desaf1.vercel.app/)
+Sitio publicado: [https://ecommerce-dps-desaf1.vercel.app/]
 
 Conectado a GitHub para despliegue continuo — cada push a `main` actualiza el sitio automáticamente.
+
+## Video demostrativo
+
+[URL DEL VIDEO AQUÍ]
+
+## Nombre
+
+Gabriel Alejandro Martinez Rivera MR230355
